@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Rustic culinary studio palette */
+  --canvas: oklch(0.992 0.005 80);
+  --surface: oklch(0.965 0.012 80);
+  --ink: oklch(0.18 0.012 60);
+
+  --brand: oklch(0.58 0.16 42);          /* warm terracotta */
+  --brand-foreground: oklch(93.904% 0.00681 67.391);
+  --accent: oklch(0.48 0.11 130);        /* herb green */
+  --accent-foreground: oklch(0.99 0.005 80);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --destructive: oklch(41.903% 0.16534 28.019);
+  --destructive-foreground: oklch(0.99 0.005 80);
+}
+
+@layer base {
+  html, body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
